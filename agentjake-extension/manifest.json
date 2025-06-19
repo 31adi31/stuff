@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Agent Jake Extension",
+  "version": "1.0",
+  "description": "A light-mode chatbot with intro screen.",
+  "action": {
+    "default_popup": "intro.html",
+    "default_icon": {
+      "128": "icon.png"
+    }
+  },
+  "icons": {
+    "128": "icon.png"
+  }
+}
