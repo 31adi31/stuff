@@ -3,10 +3,24 @@ const userInput = document.getElementById("userInput");
 const sendBtn = document.getElementById("sendBtn");
 
 function appendMessage(text, sender) {
-  const msg = document.createElement("div");
-  msg.className = "message" + (sender === "user" ? " user" : "");
-  msg.textContent = text;
-  chatWindow.appendChild(msg);
+  const msgWrapper = document.createElement("div");
+
+  if (sender === "bot") {
+    msgWrapper.className = "message-row bot-row";
+    msgWrapper.innerHTML = `
+      <div class="avatar-container">
+        <img src="icon.png" class="bot-avatar" alt="Bot Avatar" />
+      </div>
+      <div class="bubble-container">
+        <div class="bot-bubble">${text}</div>
+      </div>
+    `;
+  } else {
+    msgWrapper.className = "message user";
+    msgWrapper.textContent = text;
+  }
+
+  chatWindow.appendChild(msgWrapper);
   chatWindow.scrollTop = chatWindow.scrollHeight;
 }
 

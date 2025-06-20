@@ -68,6 +68,47 @@ button {
   font-size: 14px;
   cursor: pointer;
 }
+
+/* Wraps bot message row (icon + bubble) */
+.message-row.bot-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 10px;
+  max-width: 100%; /* NEW: prevents it from overflowing */
+}
+
+.avatar-container {
+  width: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-shrink: 0; /* NEW: don’t let avatar shrink */
+}
+
+.bot-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+
+.bubble-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.bot-bubble {
+  background: #e0e0e0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.4;
+  max-width: 85%;   /* ✅ IMPORTANT: Constrain width */
+  word-wrap: break-word;
+}
   </style>
 </head>
 <body>
